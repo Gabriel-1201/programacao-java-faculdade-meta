@@ -10,5 +10,7 @@ public class Crud {
         Categoria categoria = new Categoria(2);
         System.out.println(categoria.getNome());
         
+        
+        
     }
 }

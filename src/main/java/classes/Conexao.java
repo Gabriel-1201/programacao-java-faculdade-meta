@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class Conexao {
     public static String servidor = "127.0.0.1:3306";
     public static String usuario = "root";
-    public static String senha = "";
+    public static String senha = "BatataBatata12!!";
     public static String nome_banco = "crud";
     
     public static Connection conexao() throws ClassNotFoundException{

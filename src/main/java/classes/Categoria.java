@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Categoria implements crud{
     int id;
@@ -46,7 +48,19 @@ public class Categoria implements crud{
 
     @Override
     public void adicionar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO categorias (nome) VALUES(?)";
+        Connection con;
+        try {
+            con = Conexao.conexao();
+            PreparedStatement stmt = con.prepareStatement(sql);
+        
+            stmt.setString(1,this.getNome());
+            stmt.execute();
+        } catch (SQLException e) {
+            System.out.println("Erro" + e);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Categoria.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

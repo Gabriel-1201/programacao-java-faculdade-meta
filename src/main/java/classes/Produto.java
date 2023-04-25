@@ -78,7 +78,8 @@ public class Produto implements crud{
 
     @Override
     public void adicionar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO produtos (categoria_id, nome, preco, quantidade) VALUES (?,?,?,?)";
+        
     }
 
     @Override
